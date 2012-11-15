@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7972A557-D359-430D-A2A4-D03AF09E647A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinbinRepository", "BinbinRepository\BinbinRepository.csproj", "{AA57C5BF-CC5B-436C-8B76-3E370121361B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinbinRepository.Intergrations.LinqToSql", "BinbinRepository.Intergrations.LinqToSql\BinbinRepository.Intergrations.LinqToSql.csproj", "{890D18B8-C5FB-4463-881A-46FB2E0648BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinbinRepository.Intergrations.EntityFramework", "BinbinRepository.Intergrations.EntityFramework\BinbinRepository.Intergrations.EntityFramework.csproj", "{DCFAA434-5D08-4F50-8B68-B01A6813A745}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.BinbinRepository.Intergrations.EntityFramework", "Samples.BinbinRepository.Intergrations.EntityFramework\Samples.BinbinRepository.Intergrations.EntityFramework.csproj", "{A139C7DD-BF08-4BC0-B48A-30C7C07CE54E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.BinbinRepository.Intergrations.LinqToSql", "Samples.BinbinRepository.Intergrations.LinqToSql\Samples.BinbinRepository.Intergrations.LinqToSql.csproj", "{69A57999-40BD-49DC-83CB-1F97C3151324}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinbinRepository.Intergrations.EntityFramework.Unity", "BinbinRepository.Intergrations.EntityFramework.Unity\BinbinRepository.Intergrations.EntityFramework.Unity.csproj", "{D22A5191-918B-4837-9663-6D3A777A757B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinbinRepository.Intergrations.LinqToSql.Unity", "BinbinRepository.Intergration.LinqToSql.Unity\BinbinRepository.Intergrations.LinqToSql.Unity.csproj", "{4180F7F6-74B7-4382-8E43-787DD35023C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{7818A225-ABFC-447C-829F-9F485FFC1D6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{DF6D53A9-CCCD-448D-99D2-72F486AD47C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA57C5BF-CC5B-436C-8B76-3E370121361B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA57C5BF-CC5B-436C-8B76-3E370121361B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA57C5BF-CC5B-436C-8B76-3E370121361B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA57C5BF-CC5B-436C-8B76-3E370121361B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{890D18B8-C5FB-4463-881A-46FB2E0648BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{890D18B8-C5FB-4463-881A-46FB2E0648BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{890D18B8-C5FB-4463-881A-46FB2E0648BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{890D18B8-C5FB-4463-881A-46FB2E0648BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCFAA434-5D08-4F50-8B68-B01A6813A745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFAA434-5D08-4F50-8B68-B01A6813A745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFAA434-5D08-4F50-8B68-B01A6813A745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFAA434-5D08-4F50-8B68-B01A6813A745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A139C7DD-BF08-4BC0-B48A-30C7C07CE54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A139C7DD-BF08-4BC0-B48A-30C7C07CE54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A139C7DD-BF08-4BC0-B48A-30C7C07CE54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A139C7DD-BF08-4BC0-B48A-30C7C07CE54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A57999-40BD-49DC-83CB-1F97C3151324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A57999-40BD-49DC-83CB-1F97C3151324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A57999-40BD-49DC-83CB-1F97C3151324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A57999-40BD-49DC-83CB-1F97C3151324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D22A5191-918B-4837-9663-6D3A777A757B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22A5191-918B-4837-9663-6D3A777A757B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22A5191-918B-4837-9663-6D3A777A757B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22A5191-918B-4837-9663-6D3A777A757B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4180F7F6-74B7-4382-8E43-787DD35023C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4180F7F6-74B7-4382-8E43-787DD35023C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4180F7F6-74B7-4382-8E43-787DD35023C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4180F7F6-74B7-4382-8E43-787DD35023C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{890D18B8-C5FB-4463-881A-46FB2E0648BB} = {DF6D53A9-CCCD-448D-99D2-72F486AD47C3}
+		{DCFAA434-5D08-4F50-8B68-B01A6813A745} = {DF6D53A9-CCCD-448D-99D2-72F486AD47C3}
+		{D22A5191-918B-4837-9663-6D3A777A757B} = {DF6D53A9-CCCD-448D-99D2-72F486AD47C3}
+		{4180F7F6-74B7-4382-8E43-787DD35023C2} = {DF6D53A9-CCCD-448D-99D2-72F486AD47C3}
+		{AA57C5BF-CC5B-436C-8B76-3E370121361B} = {DF6D53A9-CCCD-448D-99D2-72F486AD47C3}
+		{69A57999-40BD-49DC-83CB-1F97C3151324} = {7818A225-ABFC-447C-829F-9F485FFC1D6C}
+		{A139C7DD-BF08-4BC0-B48A-30C7C07CE54E} = {7818A225-ABFC-447C-829F-9F485FFC1D6C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

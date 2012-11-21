@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Linq;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -12,31 +13,31 @@ namespace BinbinRepository.Intergrations.LinqToSql
     {
         public Repository(TDataContext dataContext)
         {
-            this.DataContext = dataContext;
+            DataContext = dataContext;
         }
 
-        #region Implementation of IRepository<TEntity,in int>
+        private TDataContext DataContext { get; set; }
 
         public virtual List<TEntity> Find(Expression<Func<TEntity, bool>> expression)
         {
-            return this.DataContext.GetTable<TEntity>().Where(expression).ToList();
+            return GetTable().Where(expression).ToList();
         }
 
         public virtual void Add(TEntity entity)
         {
-            this.DataContext.GetTable<TEntity>().InsertOnSubmit(entity);
-            this.DataContext.SubmitChanges();
+            DataContext.GetTable<TEntity>().InsertOnSubmit(entity);
+            DataContext.SubmitChanges();
         }
 
         public virtual void Remove(TEntity entity)
         {
-            this.DataContext.GetTable<TEntity>().DeleteOnSubmit(entity);
-            this.DataContext.SubmitChanges();
+            DataContext.GetTable<TEntity>().DeleteOnSubmit(entity);
+            DataContext.SubmitChanges();
         }
 
         public virtual void Save(TEntity entity)
         {
-            this.DataContext.SubmitChanges();
+            DataContext.SubmitChanges();
         }
 
         public virtual TEntity Find(TKey key)
@@ -47,24 +48,49 @@ namespace BinbinRepository.Intergrations.LinqToSql
                     Expression.Equal(
                         Expression.Property(
                             itemParameter,
-                            this.GetPrimaryKeyName()
+                            GetPrimaryKeyName()
                             ),
                         Expression.Constant(key)
                         ),
                     new[] {itemParameter}
                 );
-            return this.DataContext.GetTable<TEntity>().Where(whereExpression).Single();
+            return GetTable().Where(whereExpression).Single();
         }
 
         public string GetPrimaryKeyName()
         {
-            var metaType = this.DataContext.Mapping.GetMetaType(typeof (TEntity));
+            var metaType = GetMetaType();
             var primaryKey = metaType.DataMembers.Single(m => m.IsPrimaryKey);
             return primaryKey.Name;
         }
 
-        #endregion
+        private IQueryable<TEntity> GetTable()
+        {
+            var metaType = DataContext.Mapping.GetMetaType(typeof (TEntity));
+            IQueryable<TEntity> table;
+            if (metaType.HasInheritance)
+            {
+                var baseType = metaType.InheritanceRoot.Type;
+                table = DataContext.GetTable(baseType).OfType<TEntity>();
+            }
+            else
+            {
+                table = DataContext.GetTable<TEntity>();
+            }
+            return table;
+        }
 
-        private TDataContext DataContext { get; set; }
+       
+
+
+        private MetaType GetMetaType()
+        {
+            var metaType = DataContext.Mapping.GetMetaType(typeof (TEntity));
+            if (metaType.HasInheritance)
+            {
+                return metaType.InheritanceRoot;
+            }
+            return metaType;
+        }
     }
 }
